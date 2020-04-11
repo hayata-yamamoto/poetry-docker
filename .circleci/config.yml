@@ -16,7 +16,7 @@ commands:
             docker images
       - run: 
           name: check python executability
-          command: docker run -it poetry-docker poetry run python -c "print('hello world')"
+          command: docker run -it poetry-docker example.py
 
 jobs: 
   is_buildable: 
