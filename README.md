@@ -16,5 +16,5 @@ $ docker run -it poetry-docker example.py
 
 ## TODO 
 
-- [] Dockerfile / poetry based
+- [ ] Dockerfile / poetry based
 - [x] Dockerfile / only use poetry on first stage build
