@@ -7,14 +7,16 @@ executors:
       - image: circleci/python:3.7
 
 commands:
-  build:
+  check:
     steps: 
       - run: 
           name: build image 
           command: |
             docker build -t poetry-docker .
             docker images
-
+      - run: 
+          name: check python executability
+          command: docker run -it poetry-docker poetry run python -c "print('hello world')"
 
 jobs: 
   is_buildable: 
@@ -23,7 +25,7 @@ jobs:
     steps: 
       - checkout 
       - setup_remote_docker 
-      - build
+      - check
 
 workflows: 
   availability_check: 
