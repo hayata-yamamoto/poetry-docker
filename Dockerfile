@@ -37,4 +37,4 @@ COPY --from=builder /app/.venv /.venv
 COPY . .
 
 ENV PYTHONPATH PYTHONPATH:/app
-
+ENTRYPOINT [ "/bin/bash", "-c" ]
