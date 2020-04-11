@@ -2,7 +2,7 @@ version: 2.1
 
 executors:
   pyimage:
-    working_directory: ~/
+    working_directory: ~/poetry-docker
     docker:
       - image: circleci/python:3.7
 
