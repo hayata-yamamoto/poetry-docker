@@ -33,8 +33,9 @@ RUN apt-get -y update \
   && apt-get -y upgrade \
   && apt-get -yq install --no-install-recommends gcc 
 
+
 COPY --from=builder /app/.venv /.venv
 COPY . .
 
 ENV PYTHONPATH PYTHONPATH:/app
-ENTRYPOINT [ "/bin/bash", "-c" ]
+ENTRYPOINT [ "/.venv/bin/python3" ]
